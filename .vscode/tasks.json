@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "asm: build",
+      "type": "shell",
+      "command": "nasm -felf64 ${file} -o ${fileBasenameNoExtension}.o && gcc -no-pie ${fileBasenameNoExtension}.o -o ${fileBasenameNoExtension}",
+      "problemMatcher": []
+    },
+    {
+      "label": "asm: run (terminal)",
+      "type": "shell",
+      "dependsOn": "asm: build",
+      "command": "./${fileBasenameNoExtension}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}

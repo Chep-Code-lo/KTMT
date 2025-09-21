@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "name": "WSL-GCC",
+      "compilerPath": "/usr/bin/gcc",
+      "intelliSenseMode": "linux-gcc-x64",
+      "includePath": ["${default}"],
+      "cStandard": "c17",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}

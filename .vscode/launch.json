@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug ASM (GDB)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "asm: build",
+      "cwd": "${workspaceFolder}",
+      "externalConsole": true
+    },
+    {
+      "name": "Run ASM (FAST, no debug)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+      "cwd": "${workspaceFolder}",
+      "noDebug": true,
+      "externalConsole": true
+    }
+  ]
+}
