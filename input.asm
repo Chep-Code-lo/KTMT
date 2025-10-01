@@ -9,8 +9,8 @@ hlen    equ $ - hello
             name    resb 32
 
             section .text
-            global main
-main:
+            global _start
+_start:
     mov eax, 4
     mov ebx, 1
     mov ecx, prompt
