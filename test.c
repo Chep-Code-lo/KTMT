@@ -1,14 +1,14 @@
 #include <stdio.h>
-void func(int x, int y)
-{
-    x = x + y;
-    printf("%d\n",x);
-}
+#include <string.h>
+extern void mem_display();
+extern void mem_copy();
 int main()
 {
-    int a=5;
-    int b=7;
-    func(a,b);
-    printf("Hello\n");
+    char *cStr = "String is C language";
+    int size = strlen(cStr);
+    mem_display(cStr, size);
+    char c[size];
+    mem_copy(cStr,c , size);
+    mem_display(c , size);
     return 0;
 }

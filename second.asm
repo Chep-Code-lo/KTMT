@@ -30,18 +30,20 @@ _start:
         add ax, [b]
         mov [Tong], eax
 _tong:
-        mov ax, [a]
-        sub ax, [b]
-        mov [Hieu], ax
+        mov al, -128
+        sub al, 1
+        mov [Hieu], al
 _hieu:
         mov ax, [a]
         imul word[b]
         mov [Tich], ax
         mov [Tich + 2], dx
 _tich:
-        mov ax, [a]
+        mov ax, 0xf712
         xor dx, dx
-        div word[b]
+        mov bx, 0x102
+        div bx
+        add ax, 0x100
         mov [Thuong], ax
         mov [Du], dx
 _thuong:
@@ -80,6 +82,13 @@ _sumLoop:
         add esi, 2
         loop _sumLoop
         mov [sum], eax
+        mov ax, 0x01BC
+        mov cl, 2
+        shl ax, cl
+        add ax, 166
+        shr ax, cl
+        shr ax, cl
+_test:
 _exit:
         mov eax, 1
         int 0x80
